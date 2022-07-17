@@ -39,7 +39,7 @@ import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity{
-
+    // Test
     BottomNavigationView bottomNavigationView;
     private PreferenceManager preferenceManager;
     private static final int DOWNLOAD_JOB_KEY = 101;
