@@ -104,7 +104,6 @@ public class Obat extends Fragment {
 
             @Override
             public void onFailure(Call<NotificationResponse> call, Throwable t) {
-                Log.d("URTError", t.getMessage());
             }
         });
     }

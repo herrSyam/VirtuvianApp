@@ -34,8 +34,7 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferenceManager = new PreferenceManager(getApplicationContext());
-
-        if (preferenceManager.getString(Constants.KEY_IS_SIGNED_IN) != "")
+        if (preferenceManager.getString(Constants.KEY_IS_SIGNED_IN) != "" && preferenceManager.getString(Constants.KEY_IS_SIGNED_IN) != null )
         {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);

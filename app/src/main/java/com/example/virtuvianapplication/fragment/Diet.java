@@ -151,7 +151,6 @@ public class Diet extends Fragment implements CalenderAdapter.OnItemListener {
 
             @Override
             public void onFailure(Call<EventDietResponse> call, Throwable t) {
-                Log.d("URTError", t.getMessage());
             }
         });
     }

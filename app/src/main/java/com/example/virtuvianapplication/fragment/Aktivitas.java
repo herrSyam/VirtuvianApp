@@ -141,7 +141,6 @@ public class Aktivitas extends Fragment implements CalenderAdapter.OnItemListene
 
             @Override
             public void onFailure(Call<EventAktivitasResponse> call, Throwable t) {
-                Log.d("URTError", t.getMessage());
             }
         });
     }
