@@ -69,6 +69,7 @@ public class Obat extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        initPersonObat();
         setAdapter();
     }
 

@@ -83,8 +83,7 @@ public class MainActivity extends AppCompatActivity{
 
     private void initJobScheduler() {
 
-        Log.d("mainActivity", "initJobScheduler : Start");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ComponentName componentName = new ComponentName(this, JobServices.class);
             JobInfo.Builder builder = new JobInfo.Builder(DOWNLOAD_JOB_KEY, componentName)
                     .setRequiredNetworkType(JobInfo.NETWORK_TYPE_NONE);
