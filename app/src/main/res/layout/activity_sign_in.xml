@@ -36,15 +36,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_40sdp"
             android:background="@drawable/background_input"
-            android:hint="@string/email"
+            android:hint="Nama"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:paddingStart="@dimen/_16sdp"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />

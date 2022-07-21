@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.virtuvianapplication.app.ApiConfig;
@@ -32,13 +34,41 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void setListeners(){
         binding.textSignIn.setOnClickListener(v -> onBackPressed());
+        binding.gender.clearCheck();
+        binding.gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = (RadioButton)group.findViewById(checkedId);
+            }
+        });
+
+
+
         binding.buttonSignUp.setOnClickListener(v -> {
-            final String email = binding.inputEmail.getText().toString();
             final String password = binding.inputPassword.getText().toString();
             final String username = binding.inputName.getText().toString();
-            if (isValidSignUpDetails(email, password, username))
+            final Integer age = Integer.parseInt(binding.age.getText().toString());
+            final Double weight = Double.parseDouble(binding.weight.getText().toString());
+            final Double height = Double.parseDouble(binding.height.getText().toString());
+            Integer gender = 0;
+            int selectId = binding.gender.getCheckedRadioButtonId();
+            if (selectId == -1) {
+                Toast.makeText(SignUpActivity.this,
+                        "No answer has been selected",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+                RadioButton radioButton = (RadioButton)binding.gender.findViewById(selectId);
+                if (selectId == binding.male.getId()) {
+                    gender = 0;
+                } else {
+                    gender = 1;
+                }
+            }
+
+            if (isValidSignUpDetails(password, username))
             {
-                signUp(email, password, username);
+                signUp(password, username, age, gender, weight, height);
             }
         });
     }
@@ -47,12 +77,8 @@ public class SignUpActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    private boolean isValidSignUpDetails(final String email, final String password, final String username) {
-        if (email.trim().isEmpty())
-        {
-            showToast("Enter email");
-            return false;
-        } else if (password.trim().isEmpty())
+    private boolean isValidSignUpDetails(final String password, final String username) {
+        if (password.trim().isEmpty())
         {
             showToast("Enter password");
             return false;
@@ -66,8 +92,8 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    private void signUp(final String email, final String password, final String username) {
-        Call<UserResponse> call = ApiConfig.getApiRequest().register(email, password, username);
+    private void signUp(final String password, final String username, final Integer age, Integer selectId, final Double weight, final Double height) {
+        Call<UserResponse> call = ApiConfig.getApiRequest().register(password, username, age, selectId, weight, height);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {

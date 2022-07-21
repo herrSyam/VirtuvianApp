@@ -3,6 +3,7 @@ package com.example.virtuvianapplication.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.virtuvianapplication.adapter.ObatListAdapter;
@@ -14,6 +15,7 @@ import com.example.virtuvianapplication.model.ObatDataModel;
 import com.example.virtuvianapplication.model.ObatModel;
 import com.example.virtuvianapplication.model.ObatSaveModel;
 import com.example.virtuvianapplication.response.AktivitasResponse;
+import com.example.virtuvianapplication.response.ObatNotifResponse;
 import com.example.virtuvianapplication.response.ObatResponse;
 import com.example.virtuvianapplication.response.PostResponse;
 import com.example.virtuvianapplication.util.Constants;
@@ -98,20 +100,23 @@ public class AddEditObatNotif extends AppCompatActivity implements ObatListener 
             obatDataModels.add(obatDataModel);
         }
 
-        obatSaveModel = new ObatSaveModel("add", obatDataModels);
-        Call<PostResponse> call = ApiConfig.getApiRequest().addPersonNotification(obatSaveModel);
-        call.enqueue(new Callback<PostResponse>() {
+        obatSaveModel = new ObatSaveModel(preferenceManager.getString(Constants.KEY_USER_ID),"add", obatDataModels);
+
+        Call<ObatNotifResponse> call = ApiConfig.getApiRequest().addPersonNotification(obatSaveModel);
+        call.enqueue(new Callback<ObatNotifResponse>() {
             @Override
-            public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
+            public void onResponse(Call<ObatNotifResponse> call, Response<ObatNotifResponse> response) {
                 if (response.isSuccessful())
                 {
+                    ObatNotifResponse obatNotifResponse = response.body();
+                    preferenceManager.putString(Constants.KEY_OBAT, obatNotifResponse.getObatId().getObat_event_id());
                     loading(false);
                     onBackPressed();
                 }
             }
 
             @Override
-            public void onFailure(Call<PostResponse> call, Throwable t) {
+            public void onFailure(Call<ObatNotifResponse> call, Throwable t) {
 
             }
         });

@@ -36,27 +36,18 @@
                 android:id="@+id/imageProfile"
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
-                android:background="@drawable/background_image"
+                android:background="@mipmap/ic_logo_foreground"
                 android:scaleType="centerCrop"
                 app:riv_oval="true" />
-
-            <TextView
-                android:id="@+id/textAddImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/add_image"
-                android:textColor="@color/secondary_text"
-                android:textSize="@dimen/_10ssp" />
         </FrameLayout>
 
         <EditText
             android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/background_input"
-            android:hint="@string/name"
+            android:hint="Nama"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="text"
@@ -65,26 +56,26 @@
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />
 
-        <EditText
-            android:id="@+id/inputEmail"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@drawable/background_input"
-            android:hint="@string/email"
-            android:imeOptions="actionNext"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
+<!--        <EditText-->
+<!--            android:id="@+id/inputEmail"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/_45sdp"-->
+<!--            android:layout_marginTop="@dimen/_20sdp"-->
+<!--            android:background="@drawable/background_input"-->
+<!--            android:hint="@string/email"-->
+<!--            android:imeOptions="actionNext"-->
+<!--            android:importantForAutofill="no"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            android:paddingStart="@dimen/_16sdp"-->
+<!--            android:paddingEnd="@dimen/_16sdp"-->
+<!--            android:textColor="@color/primary_text"-->
+<!--            android:textSize="@dimen/_13ssp" />-->
 
         <EditText
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/background_input"
             android:hint="@string/password"
             android:imeOptions="actionNext"
@@ -94,6 +85,78 @@
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />
+
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/male"
+                android:text="@string/laki_laki"
+                android:textSize="@dimen/_13ssp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_40sdp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/female"
+                android:text="@string/perempuan"
+                android:textSize="@dimen/_13ssp"/>
+
+        </RadioGroup>
+
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/background_input"
+            android:hint="Umur"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_13ssp" />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/background_input"
+            android:hint="Berat Badan"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_13ssp" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/background_input"
+            android:hint="Tinggi Badan"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_13ssp" />
+
 
         <FrameLayout
             android:layout_width="match_parent"

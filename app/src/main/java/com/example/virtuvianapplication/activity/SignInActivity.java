@@ -49,10 +49,10 @@ public class SignInActivity extends AppCompatActivity {
         binding.textCreateNewAccount.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
         binding.buttonSignIn.setOnClickListener(v -> {
-            final String email = binding.inputEmail.getText().toString();
+            final String name = binding.inputName.getText().toString();
             final String password = binding.inputPassword.getText().toString();
-            if (isValidSignInDetails(email, password)){
-                signIn(email, password);
+            if (isValidSignInDetails(name, password)){
+                signIn(name, password);
             }
         });
     }
@@ -61,9 +61,9 @@ public class SignInActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    private boolean isValidSignInDetails(final String email, final String password){
-        if (email.trim().isEmpty()){
-            showToast("Enter Email");
+    private boolean isValidSignInDetails(final String name, final String password){
+        if (name.trim().isEmpty()){
+            showToast("Enter Nama");
             return false;
         } else if (password.trim().isEmpty()){
             showToast("Enter Password");
@@ -73,8 +73,8 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    private void signIn(final String email, final String password){
-        Call<UserResponse> call = apiConfig.getApiRequest().getUser(email,password);
+    private void signIn(final String name, final String password){
+        Call<UserResponse> call = apiConfig.getApiRequest().getUser(name,password);
         call.enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {

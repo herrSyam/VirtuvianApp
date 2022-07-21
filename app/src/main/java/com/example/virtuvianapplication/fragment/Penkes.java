@@ -82,8 +82,6 @@ public class Penkes extends Fragment {
 
     private void logOut()
     {
-        Log.e("login", "message" + preferenceManager.getString(Constants.KEY_IS_SIGNED_IN));
-        Log.e("login", "email" + preferenceManager.getString(Constants.KEY_EMAIL));
         // preferenceManager.putString(Constants.KEY_IS_SIGNED_IN, "");
         Call<PostResponse> call = ApiConfig.getApiRequest().logOut("Bearer " + preferenceManager.getString(Constants.KEY_IS_SIGNED_IN));
         call.enqueue(new Callback<PostResponse>() {
@@ -97,6 +95,7 @@ public class Penkes extends Fragment {
                     preferenceManager.putString(Constants.KEY_NAME, "");
                     preferenceManager.putString(Constants.KEY_EMAIL, "");
                     preferenceManager.putString(Constants.KEY_FCM_TOKEN, "");
+                    preferenceManager.putString(Constants.KEY_OBAT,"");
                     Intent intent = new Intent(getActivity(), SignInActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

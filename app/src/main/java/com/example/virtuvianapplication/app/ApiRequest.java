@@ -13,6 +13,7 @@ import com.example.virtuvianapplication.response.EventAktivitasResponse;
 import com.example.virtuvianapplication.response.EventDietResponse;
 import com.example.virtuvianapplication.response.NotifResponse;
 import com.example.virtuvianapplication.response.NotificationResponse;
+import com.example.virtuvianapplication.response.ObatNotifResponse;
 import com.example.virtuvianapplication.response.ObatResponse;
 import com.example.virtuvianapplication.response.PenkesResponse;
 import com.example.virtuvianapplication.response.PersonObatResponse;
@@ -46,7 +47,7 @@ public interface ApiRequest {
 
     @POST("login")
     Call<UserResponse> getUser(
-            @Query("email") String email,
+            @Query("name") String name,
             @Query("password") String password
     );
 
@@ -58,9 +59,12 @@ public interface ApiRequest {
 
     @POST("register")
     Call<UserResponse> register(
-            @Query("email") String email,
             @Query("password") String password,
-            @Query("name") String name
+            @Query("name") String name,
+            @Query("age") Integer age,
+            @Query("gender") Integer gender,
+            @Query("weight") Double weight,
+            @Query("height") Double height
     );
 
     @POST("logout")
@@ -100,7 +104,7 @@ public interface ApiRequest {
     Call<ObatResponse> getObat();
 
     @POST("personNotification/action")
-    Call<PostResponse> addPersonNotification(@Body ObatSaveModel obatSaveModel);
+    Call<ObatNotifResponse> addPersonNotification(@Body ObatSaveModel obatSaveModel);
 
     @GET("eventNotification/getNotificationByObatId")
     Call<NotificationResponse> getNotification(
