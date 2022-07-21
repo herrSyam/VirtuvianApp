@@ -168,6 +168,7 @@ public class Diet extends Fragment implements CalenderAdapter.OnItemListener {
                         preferenceManager.putString(Constants.KEY_USER_ID, "");
                         preferenceManager.putString(Constants.KEY_NAME, "");
                         preferenceManager.putString(Constants.KEY_EMAIL, "");
+                        preferenceManager.putString(Constants.KEY_FCM_TOKEN, "");
                         Intent intent = new Intent(getActivity(), SignInActivity.class);
 
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

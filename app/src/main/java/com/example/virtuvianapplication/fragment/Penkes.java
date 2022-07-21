@@ -91,15 +91,31 @@ public class Penkes extends Fragment {
             public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
                 if (response.isSuccessful())
                 {
+                    updateTokeDevice();
                     preferenceManager.putString(Constants.KEY_IS_SIGNED_IN,"");
                     preferenceManager.putString(Constants.KEY_USER_ID, "");
                     preferenceManager.putString(Constants.KEY_NAME, "");
                     preferenceManager.putString(Constants.KEY_EMAIL, "");
-
+                    preferenceManager.putString(Constants.KEY_FCM_TOKEN, "");
                     Intent intent = new Intent(getActivity(), SignInActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
+            }
+
+            @Override
+            public void onFailure(Call<PostResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void updateTokeDevice() {
+        Call<PostResponse> call = ApiConfig.getApiRequest().updateTokenDevice(preferenceManager.getString(Constants.KEY_USER_ID), null);
+        call.enqueue(new Callback<PostResponse>() {
+            @Override
+            public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
+
             }
 
             @Override
@@ -123,6 +139,7 @@ public class Penkes extends Fragment {
                         preferenceManager.putString(Constants.KEY_USER_ID, "");
                         preferenceManager.putString(Constants.KEY_NAME, "");
                         preferenceManager.putString(Constants.KEY_EMAIL, "");
+                        preferenceManager.putString(Constants.KEY_FCM_TOKEN, "");
                         Intent intent = new Intent(getActivity(), SignInActivity.class);
 
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

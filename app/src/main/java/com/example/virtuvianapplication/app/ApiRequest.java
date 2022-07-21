@@ -11,6 +11,7 @@ import com.example.virtuvianapplication.response.AccessToken;
 import com.example.virtuvianapplication.response.AktivitasResponse;
 import com.example.virtuvianapplication.response.EventAktivitasResponse;
 import com.example.virtuvianapplication.response.EventDietResponse;
+import com.example.virtuvianapplication.response.NotifResponse;
 import com.example.virtuvianapplication.response.NotificationResponse;
 import com.example.virtuvianapplication.response.ObatResponse;
 import com.example.virtuvianapplication.response.PenkesResponse;
@@ -47,6 +48,12 @@ public interface ApiRequest {
     Call<UserResponse> getUser(
             @Query("email") String email,
             @Query("password") String password
+    );
+
+    @POST("updateTokeDevice")
+    Call<PostResponse> updateTokenDevice(
+            @Query("userId") String userId,
+            @Query("device_token") String device_token
     );
 
     @POST("register")
@@ -104,4 +111,5 @@ public interface ApiRequest {
     Call<PersonObatResponse> getPersonObat(
             @Query("user_id") String user_id
     );
+
 }

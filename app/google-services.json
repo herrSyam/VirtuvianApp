@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "439564008424",
+    "project_id": "virtuv-app",
+    "storage_bucket": "virtuv-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439564008424:android:6aebc53183ed966a5ec25d",
+        "android_client_info": {
+          "package_name": "com.example.virtuvianapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439564008424-87knmu8j04i2la2ogg5arbnd5ku5ngig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoZLFlI-n8SgDNsLbbwIZo5HAdm9zWxxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439564008424-87knmu8j04i2la2ogg5arbnd5ku5ngig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

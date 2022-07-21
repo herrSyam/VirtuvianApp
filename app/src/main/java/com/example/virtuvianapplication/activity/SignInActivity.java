@@ -81,12 +81,10 @@ public class SignInActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     UserResponse userResponse = response.body();
                     if (userResponse.getSuccess() == 1){
-                        Log.e("login", "message" + userResponse.getAccess_token());
                         preferenceManager.putString(Constants.KEY_IS_SIGNED_IN, userResponse.getAccess_token());
                         preferenceManager.putString(Constants.KEY_USER_ID, userResponse.getUser().getId());
                         preferenceManager.putString(Constants.KEY_NAME, userResponse.getUser().getName());
                         preferenceManager.putString(Constants.KEY_EMAIL, userResponse.getUser().getEmail());
-                        // preferenceManager.putString(Constants.KEY_OBAT, userResponse.getUserObat().getObat_event_id());
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
