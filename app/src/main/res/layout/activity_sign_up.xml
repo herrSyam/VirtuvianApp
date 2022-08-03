@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:padding="@dimen/_24sdp"
     android:scrollbars="none"
-    android:background="@drawable/background_default_element"
+    android:background="@drawable/background"
     tools:context=".activity.SignUpActivity">
 
     <LinearLayout
@@ -99,6 +99,7 @@
                 android:id="@+id/male"
                 android:text="@string/laki_laki"
                 android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_40sdp"/>
 
@@ -107,7 +108,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/female"
                 android:text="@string/perempuan"
-                android:textSize="@dimen/_13ssp"/>
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/white"/>
 
         </RadioGroup>
 

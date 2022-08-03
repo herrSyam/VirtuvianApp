@@ -13,6 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_default_element"
         android:padding="@dimen/_5sdp"
         android:orientation="horizontal">
 

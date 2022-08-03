@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:padding="@dimen/_24sdp"
     android:scrollbars="none"
-    android:background="@drawable/background_default_element"
+    android:background="@drawable/background"
     tools:context=".activity.SignInActivity">
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_40sdp"
             android:text="@string/wellcome_back"
-            android:textColor="@color/primary_text"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_18sdp"
             android:textStyle="bold" />
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
             android:text="@string/login_to_continue"
-            android:textColor="@color/secondary_text"
+            android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30sdp"
             android:text="@string/create_new_account"
-            android:textColor="@color/primary"
+            android:textColor="@color/colorWhite"
             android:textStyle="bold" />
 
     </LinearLayout>

@@ -1,12 +1,14 @@
 package com.example.virtuvianapplication.adapter;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.virtuvianapplication.R;
 import com.example.virtuvianapplication.databinding.CalenderCellBinding;
 import com.example.virtuvianapplication.util.CalenderUtils;
 import com.example.virtuvianapplication.util.CalenderViewHolder;
@@ -46,8 +48,9 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderViewHolder> {
         else
         {
             holder.dayOfMonth.setText(String.valueOf(date.getDayOfMonth()));
+            holder.parentView.setBackgroundResource(R.drawable.background_calender);
             if (date.equals(CalenderUtils.selectDate))
-                holder.parentView.setBackgroundColor(Color.LTGRAY);
+                holder.parentView.setBackgroundResource(R.drawable.background_calender_select);
         }
     }
 

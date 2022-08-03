@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/primary"
+    android:background="@drawable/background"
     tools:context=".fragment.Aktivitas">
 
     <TextView
@@ -54,7 +54,7 @@
             android:layout_gravity="top|center"
             android:layout_marginTop="@dimen/_14sdp"
             android:text="@string/date"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_16sdp"
             android:textAlignment="center"
             android:textColor="@color/secondary_text"/>
 
@@ -77,70 +77,77 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_70sdp">
+            android:layout_marginTop="@dimen/_50sdp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="SUN"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="MON"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="TUE"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="WED"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="THUR"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="FRI"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/background_chat_input"
                 android:text="SAT"
-                android:textColor="@color/primary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="@dimen/_16ssp"/>
+                android:textSize="@dimen/_14ssp"/>
 
         </LinearLayout>
 
@@ -148,10 +155,8 @@
             android:id="@+id/calenderRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/_100sdp"
+            android:paddingTop="@dimen/_80sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
 
         <Button
             android:id="@+id/createBtn"
