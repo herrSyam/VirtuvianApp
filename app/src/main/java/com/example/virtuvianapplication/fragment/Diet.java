@@ -134,8 +134,9 @@ public class Diet extends Fragment implements CalenderAdapter.OnItemListener {
     private void setEventAdapter()
     {
         String startDate = CalenderUtils.selectDate.toString();
+        String id = preferenceManager.getString(Constants.KEY_USER_ID);
 
-        Call<EventDietResponse> call = ApiConfig.getApiRequest().getEventDiet(startDate, startDate);
+        Call<EventDietResponse> call = ApiConfig.getApiRequest().getEventDiet(id, startDate, startDate);
 
         call.enqueue(new Callback<EventDietResponse>() {
             @Override

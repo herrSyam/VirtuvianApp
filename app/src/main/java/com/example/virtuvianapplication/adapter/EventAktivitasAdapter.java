@@ -1,6 +1,8 @@
 package com.example.virtuvianapplication.adapter;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.virtuvianapplication.R;
 import com.example.virtuvianapplication.databinding.EventCallBinding;
 import com.example.virtuvianapplication.model.EventAktivitasModel;
 import com.example.virtuvianapplication.model.EventDietModel;
@@ -54,20 +57,20 @@ public class EventAktivitasAdapter extends RecyclerView.Adapter<EventAktivitasAd
         }
 
         void setEvent(EventAktivitasModel event){
-            if (event.getTotal() >= 1.40 || event.getTotal() <= 1.69) {
-                binding.eventCallTV.setText("Aktifitas Ringan");
-                binding.eventCallTV.setBackgroundColor(Color.parseColor("#ffffff"));
-                binding.eventCallTV.setTextColor(Color.parseColor("#cccccc"));
+            if (event.getAktivitas_status().equals("Aktivitas Ringan")) {
+                binding.eventCallTV.setText(event.getAktivitas_status());
+                binding.layout.setBackgroundResource(R.drawable.background_aktivitas_ringan);
+                binding.eventCallTV.setTextColor(Color.parseColor("#000080"));
             }
-            if (event.getTotal() >= 1.70 || event.getTotal() <= 1.99) {
-                binding.eventCallTV.setText("Aktifitas Sedang");
-                binding.eventCallTV.setBackgroundColor(Color.parseColor("#ffffff"));
-                binding.eventCallTV.setTextColor(Color.parseColor("#cccccc"));
+            if (event.getAktivitas_status().equals("Aktivitas Sedang")) {
+                binding.eventCallTV.setText(event.getAktivitas_status());
+                binding.layout.setBackgroundResource(R.drawable.background_aktivitas_sedang);
+                binding.eventCallTV.setTextColor(Color.parseColor("#000080"));
             }
-            if (event.getTotal() >2.00) {
-                binding.eventCallTV.setText("Aktifitas Berat");
-                binding.eventCallTV.setBackgroundColor(Color.parseColor("#bce1d8"));
-                binding.eventCallTV.setTextColor(Color.parseColor("#ffffff"));
+            if (event.getAktivitas_status().equals("Aktivitas Berat")) {
+                binding.eventCallTV.setText(event.getAktivitas_status());
+                binding.layout.setBackgroundResource(R.drawable.background_aktivitas_berat);
+                binding.eventCallTV.setTextColor(Color.parseColor("#000080"));
             }
             binding.getRoot();
         }

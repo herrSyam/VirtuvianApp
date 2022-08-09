@@ -80,6 +80,7 @@ public interface ApiRequest {
 
     @GET("dietuser/event")
     Call<EventDietResponse> getEventDiet(
+            @Query("id") String id,
             @Query("startDate") String startDate,
             @Query("endDate") String endDate
     );
