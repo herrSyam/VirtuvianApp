@@ -12,7 +12,10 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.virtuvianapplication.R;
+import com.example.virtuvianapplication.activity.EventEditActivity;
 import com.example.virtuvianapplication.activity.MainActivity;
+import com.example.virtuvianapplication.fragment.Diet;
+import com.example.virtuvianapplication.fragment.Penkes;
 import com.example.virtuvianapplication.util.Constants;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -32,18 +35,34 @@ public class NotificationService extends FirebaseMessagingService {
         int notificationId = new Random().nextInt();
         String channelId = "chat_message";
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId);
         builder.setSmallIcon(R.drawable.ic_notification);
-        builder.setContentText(remoteMessage.getData().get("body"));
+        builder.setContentText(remoteMessage.getData().get("body"));;
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(
                 remoteMessage.getData().get(Constants.KEY_MESSAGE)
         ));
+        builder.setAutoCancel(true);
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        builder.setContentIntent(pendingIntent);
+
+        if (remoteMessage.getData().get("title").equals("Diet"))
+        {
+            Intent intent = new Intent(this, EventEditActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            builder.setContentIntent(pendingIntent);
+        }
+        else{
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            builder.setContentIntent(pendingIntent);
+        }
+
+
+
+
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence channelName = "Chat Message";

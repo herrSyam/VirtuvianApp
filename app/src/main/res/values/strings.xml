@@ -29,4 +29,7 @@
     <string name="set_alarm">Set Alarm</string>
     <string name="laki_laki">laki - laki</string>
     <string name="perempuan">perempuan</string>
+    <string name="gds">GDS</string>
+    <string name="halama_gds">Halama GDS</string>
+    <string name="halaman_gds">Halaman GDS</string>
 </resources>

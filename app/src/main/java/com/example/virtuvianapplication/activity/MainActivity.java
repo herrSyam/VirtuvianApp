@@ -12,6 +12,7 @@ import com.example.virtuvianapplication.R;
 import com.example.virtuvianapplication.app.ApiConfig;
 import com.example.virtuvianapplication.fragment.Diet;
 import com.example.virtuvianapplication.fragment.Aktivitas;
+import com.example.virtuvianapplication.fragment.Gds;
 import com.example.virtuvianapplication.fragment.Obat;
 import com.example.virtuvianapplication.fragment.Penkes;
 import com.example.virtuvianapplication.response.PostResponse;
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.obat:
                         selectedFragment = new Obat();
+                        break;
+                    case R.id.gds:
+                        selectedFragment = new Gds();
                         break;
                 }
 

@@ -25,4 +25,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_pil_injeksi"
         android:title="@string/obat"/>
+
+    <item
+        android:id="@+id/gds"
+        android:enabled="true"
+        android:icon="@drawable/ic_pil_injeksi"
+        android:title="@string/gds"/>
 </menu>

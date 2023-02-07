@@ -11,6 +11,7 @@ import com.example.virtuvianapplication.response.AccessToken;
 import com.example.virtuvianapplication.response.AktivitasResponse;
 import com.example.virtuvianapplication.response.EventAktivitasResponse;
 import com.example.virtuvianapplication.response.EventDietResponse;
+import com.example.virtuvianapplication.response.GdsResponse;
 import com.example.virtuvianapplication.response.NotifResponse;
 import com.example.virtuvianapplication.response.NotificationResponse;
 import com.example.virtuvianapplication.response.ObatNotifResponse;
@@ -115,6 +116,18 @@ public interface ApiRequest {
     @GET("personNotification/notificationList")
     Call<PersonObatResponse> getPersonObat(
             @Query("user_id") String user_id
+    );
+
+    @POST("Gds/action")
+    Call<PostResponse> addGds(
+            @Query("type") String type,
+            @Query("user_id") String user_id,
+            @Query("value_gds") Double value_gds
+    );
+
+    @GET("Gds/getGdsByUserId/{id}")
+    Call<GdsResponse> getGdsByUserId(
+            @Path("id") String userId
     );
 
 }
