@@ -11,6 +11,7 @@ import com.example.virtuvianapplication.response.AccessToken;
 import com.example.virtuvianapplication.response.AktivitasResponse;
 import com.example.virtuvianapplication.response.EventAktivitasResponse;
 import com.example.virtuvianapplication.response.EventDietResponse;
+import com.example.virtuvianapplication.response.FileResponse;
 import com.example.virtuvianapplication.response.GdsResponse;
 import com.example.virtuvianapplication.response.NotifResponse;
 import com.example.virtuvianapplication.response.NotificationResponse;
@@ -129,5 +130,8 @@ public interface ApiRequest {
     Call<GdsResponse> getGdsByUserId(
             @Path("id") String userId
     );
+
+    @GET("penkesUploadFile/getAll")
+    Call<FileResponse> getFile();
 
 }

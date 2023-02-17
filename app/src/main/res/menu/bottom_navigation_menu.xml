@@ -7,6 +7,11 @@
         android:icon="@drawable/ic_penkes"
         android:title="@string/Penkes" />
 
+    <item
+        android:id="@+id/penkesVideo"
+        android:enabled="true"
+        android:icon="@drawable/ic_penkes"
+        android:title="@string/penkes_video" />
 
     <item
         android:id="@+id/diet"
@@ -26,9 +31,9 @@
         android:icon="@drawable/ic_pil_injeksi"
         android:title="@string/obat"/>
 
-    <item
+    <!--<item
         android:id="@+id/gds"
         android:enabled="true"
         android:icon="@drawable/ic_pil_injeksi"
-        android:title="@string/gds"/>
+        android:title="@string/gds"/>-->
 </menu>

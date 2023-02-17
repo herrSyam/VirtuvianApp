@@ -32,4 +32,6 @@
     <string name="gds">GDS</string>
     <string name="halama_gds">Halama GDS</string>
     <string name="halaman_gds">Halaman GDS</string>
+    <string name="penkes_video">Penkes Video</string>
+    <string name="halaman_penkes_video">Halaman Penkes Video</string>
 </resources>

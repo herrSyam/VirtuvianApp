@@ -15,6 +15,7 @@ import com.example.virtuvianapplication.fragment.Aktivitas;
 import com.example.virtuvianapplication.fragment.Gds;
 import com.example.virtuvianapplication.fragment.Obat;
 import com.example.virtuvianapplication.fragment.Penkes;
+import com.example.virtuvianapplication.fragment.penkesVideo;
 import com.example.virtuvianapplication.response.PostResponse;
 import com.example.virtuvianapplication.util.Constants;
 import com.example.virtuvianapplication.util.PreferenceManager;
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.penkes:
                         selectedFragment = new Penkes();
                         break;
+                    case R.id.penkesVideo:
+                        selectedFragment = new penkesVideo();
+                        break;
                     case R.id.diet:
                         selectedFragment = new Diet();
                         break;
@@ -61,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.obat:
                         selectedFragment = new Obat();
                         break;
-                    case R.id.gds:
+                    /*case R.id.gds:
                         selectedFragment = new Gds();
-                        break;
+                        break;*/
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
