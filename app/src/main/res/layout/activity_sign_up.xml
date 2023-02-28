@@ -20,7 +20,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_24sdp"
             android:text="@string/create_new_account"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_18sdp"
@@ -119,6 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@drawable/background_input"
             android:hint="Umur"
             android:imeOptions="actionNext"
@@ -129,36 +129,36 @@
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />
 
-        <EditText
-            android:id="@+id/weight"
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Pendidikan:"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/white"
+            />
+
+        <Spinner
+            android:id="@+id/pendidikan"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@drawable/background_input"
-            android:hint="Berat Badan"
-            android:imeOptions="actionNext"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
+            android:spinnerMode="dialog"/>
 
-        <EditText
-            android:id="@+id/height"
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Pekerjaan:"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/white"
+            />
+
+        <Spinner
+            android:id="@+id/pekerjaan"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/background_input"
-            android:hint="Tinggi Badan"
-            android:imeOptions="actionNext"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:paddingStart="@dimen/_16sdp"
-            android:paddingEnd="@dimen/_16sdp"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/_13ssp" />
-
+            android:spinnerMode="dialog"/>
 
         <FrameLayout
             android:layout_width="match_parent"

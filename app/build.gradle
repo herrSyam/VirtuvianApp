@@ -67,5 +67,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.3'
     implementation 'com.google.android.exoplayer:extension-ima:2.18.3'
 
+    implementation 'com.github.simformsolutions:SSCustomBottomNavigation:3.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 }

@@ -56,18 +56,18 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.penkesVideo:
                         selectedFragment = new penkesVideo();
                         break;
-                    case R.id.diet:
+                   /* case R.id.diet:
                         selectedFragment = new Diet();
                         break;
                     case R.id.aktivitas:
                         selectedFragment = new Aktivitas();
-                        break;
+                        break;*/
                     case R.id.obat:
                         selectedFragment = new Obat();
                         break;
-                    /*case R.id.gds:
+                    case R.id.gds:
                         selectedFragment = new Gds();
-                        break;*/
+                        break;
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();

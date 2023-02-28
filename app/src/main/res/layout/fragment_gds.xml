@@ -40,25 +40,22 @@
             android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_gravity="top|center"
-            android:text="Create"
+            android:text="@string/create"
             android:textColor="@color/white"
-            android:textSize="@dimen/_8ssp"/>
+            android:textSize="@dimen/_8ssp" />
 
         <LinearLayout
             android:id="@+id/eventGds"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_40sdp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/eventListViewGds"
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartGDS"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"/>
         </LinearLayout>
-
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

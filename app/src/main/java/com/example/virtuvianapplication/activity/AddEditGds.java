@@ -1,11 +1,20 @@
 package com.example.virtuvianapplication.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.virtuvianapplication.R;
+import com.example.virtuvianapplication.adapter.GdsAdapter;
 import com.example.virtuvianapplication.app.ApiConfig;
 import com.example.virtuvianapplication.databinding.ActivityAddEditGdsBinding;
+import com.example.virtuvianapplication.fragment.Gds;
+import com.example.virtuvianapplication.fragment.Penkes;
 import com.example.virtuvianapplication.response.PostResponse;
 import com.example.virtuvianapplication.util.Constants;
 import com.example.virtuvianapplication.util.PreferenceManager;
@@ -18,7 +27,6 @@ public class AddEditGds extends AppCompatActivity {
 
     private ActivityAddEditGdsBinding binding;
     private PreferenceManager preferenceManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +61,5 @@ public class AddEditGds extends AppCompatActivity {
 
             }
         });
-
     }
 }

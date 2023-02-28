@@ -56,6 +56,7 @@ public class GdsAdapter extends RecyclerView.Adapter<GdsAdapter.GdsViewHendler> 
 
         void setBinding(GdsModel model)
         {
+            Log.e("error", "setBinding " + model);
             binding.date.setText(model.getUpdated());
             binding.message.setText("Normal");
             binding.mgdl.setText(model.getValue_gds().toString());

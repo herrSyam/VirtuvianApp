@@ -13,6 +13,7 @@ import com.example.virtuvianapplication.response.EventAktivitasResponse;
 import com.example.virtuvianapplication.response.EventDietResponse;
 import com.example.virtuvianapplication.response.FileResponse;
 import com.example.virtuvianapplication.response.GdsResponse;
+import com.example.virtuvianapplication.response.LookupResponse;
 import com.example.virtuvianapplication.response.NotifResponse;
 import com.example.virtuvianapplication.response.NotificationResponse;
 import com.example.virtuvianapplication.response.ObatNotifResponse;
@@ -24,6 +25,7 @@ import com.example.virtuvianapplication.response.QuestionResponse;
 import com.example.virtuvianapplication.response.UserResponse;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -65,8 +67,8 @@ public interface ApiRequest {
             @Query("name") String name,
             @Query("age") Integer age,
             @Query("gender") Integer gender,
-            @Query("weight") Double weight,
-            @Query("height") Double height
+            @Query("school_id") String idSchool,
+            @Query("employment_id") String idEmploy
     );
 
     @POST("logout")
@@ -134,4 +136,18 @@ public interface ApiRequest {
     @GET("penkesUploadFile/getAll")
     Call<FileResponse> getFile();
 
+    @POST("userApp/schoolLookup")
+    Call<LookupResponse> lookupSchool(
+            @Query("search") String search
+    );
+
+    @POST("userApp/employmentLookup")
+    Call<List<LookupResponse>> lookupEmployment(
+            @Query("search") String search
+    );
+
+    @POST("userApp/schoolLookup")
+    Call<List<LookupResponse>> lookupschool(
+            @Query("search") String search
+    );
 }

@@ -10,10 +10,10 @@
     <item
         android:id="@+id/penkesVideo"
         android:enabled="true"
-        android:icon="@drawable/ic_penkes"
+        android:icon="@drawable/ic_video"
         android:title="@string/penkes_video" />
 
-    <item
+    <!--<item
         android:id="@+id/diet"
         android:enabled="true"
         android:icon="@drawable/ic_diet"
@@ -23,7 +23,7 @@
         android:id="@+id/aktivitas"
         android:enabled="true"
         android:icon="@drawable/ic_aktifitas"
-        android:title="@string/activitas"/>
+        android:title="@string/activitas"/>-->
 
     <item
         android:id="@+id/obat"
@@ -31,9 +31,9 @@
         android:icon="@drawable/ic_pil_injeksi"
         android:title="@string/obat"/>
 
-    <!--<item
+    <item
         android:id="@+id/gds"
         android:enabled="true"
-        android:icon="@drawable/ic_pil_injeksi"
-        android:title="@string/gds"/>-->
+        android:icon="@drawable/ic_gds_chart"
+        android:title="@string/gds"/>
 </menu>
